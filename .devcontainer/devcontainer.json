@@ -1,0 +1,36 @@
+{
+  "name": "thermoshelter-dev",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "bradlc.vscode-tailwindcss",
+        "Prisma.prisma",
+        "mtxr.sqltools",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.formatting.provider": "black",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "eslint.validate": ["typescript", "typescript-react"]
+      }
+    }
+  },
+  "forwardPorts": [3000, 8000, 5432],
+  "postCreateCommand": "echo 'Dev container ready. Run make dev to start the application.'",
+  "remoteUser": "node"
+}
